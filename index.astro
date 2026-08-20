@@ -1,0 +1,1625 @@
+---
+// Component Script (Server-side)
+const pageTitle = "Vũ Hoàng — The Listening Life";
+const pageDescription = "An engineer's mind. A listener's ear. Technology, sound, music and things worth remembering. Hanoi, Vietnam.";
+---
+
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="amp-glow-top"></div>
+  <div class="amp-glow-bottom"></div>
+  <div class="grain"></div>
+  <div class="cursor" id="cursor"></div>
+
+  <nav class="nav">
+    <a class="nav-brand" href="#top">
+      <span class="nav-brand-dot"></span>
+      <span>VŨ HOÀNG</span>
+    </a>
+    <div class="nav-links">
+      <a href="#system">01 The System</a>
+      <a href="#ear">02 The Ear</a>
+      <a href="#decay">03 Decay</a>
+      <a href="#listening">04 My Listening</a>
+      <a href="#ritual">05 Ritual</a>
+      <a href="#hanoi">06 Inner Hanoi</a>
+      <a href="#notes">07 Notes</a>
+    </div>
+    <button id="nav-audio-toggle" class="nav-audio-btn" title="Toggle Analog Web Audio">
+      <span id="audio-led" class="audio-led"></span>
+      <span id="audio-label">SOUND: OFF</span>
+    </button>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy fade-up">
+        <div class="eyebrow">HANOI &middot; VIETNAM &middot; 2026</div>
+        <h1>Vũ<br>Hoàng</h1>
+        <div class="hero-title">
+          <strong>Engineer, Listener and Music Curator</strong><br>
+          <em>An engineer's mind. A listener's ear.</em>
+        </div>
+        <div class="hero-sub">
+          Technology by profession. Sound by instinct.<br>
+          Một không gian lắng đọng giữa logic hệ thống hạ tầng và nghệ thuật âm thanh mộc trong lòng phố cổ Hà Nội.
+        </div>
+        
+        <div class="hero-actions">
+          <a class="enter" id="enter-btn" href="#system">Enter the room <span>&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="portrait-card">
+          <img 
+            src="/images/portrait.jpg" 
+            alt="Vũ Hoàng — The Listening Life" 
+            class="portrait-img"
+          />
+          <div class="portrait-badge">
+            <span style="color:var(--accent);text-transform:uppercase">VU HOANG &middot; HANOI</span>
+            <span>SYSTEM / LISTENER</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>THE LISTENING LIFE</span>
+        <span>SCROLL TO LISTEN &darr;</span>
+      </div>
+    </section>
+
+    <section class="system" id="system">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 01</div>
+        <h2 class="section-title">The<br>System</h2>
+        <div class="section-kicker">Before sound, there was the system.</div>
+      </div>
+
+      <div class="system-grid">
+        <p class="lead fade-up">I have always been curious about what happens beneath the surface.</p>
+        <div class="body fade-up">
+          <p>How things connect. How signals move. How a system behaves when everything is working — and when it isn't.</p>
+          <p>My relationship with sound and technology began in the 90s with world music and Japanese Koukyuu audio, before curiosity gradually expanded into engineering: networks, systems, infrastructure and real-world banking platforms.</p>
+        </div>
+      </div>
+
+      <div class="timeline fade-up">
+        <div class="time-item">
+          <div class="time-year">1994</div>
+          <div class="time-title">Koukyuu Audio & World Music</div>
+          <div class="time-copy">Bắt đầu tiếp xúc với âm nhạc thế giới và những thiết bị Koukyuu Audio Vintage Hi-End — khởi đầu cho đôi tai lắng nghe chiều sâu, chuẩn mực âm thanh mộc và sự tinh tế của các linh kiện cơ khí chính xác.</div>
+        </div>
+
+        <div class="time-item">
+          <div class="time-year">2000</div>
+          <div class="time-title">The Internet</div>
+          <div class="time-copy">Computers, networks and the early Vietnamese Internet through the TTVN / FPT environment.</div>
+        </div>
+
+        <div class="time-item">
+          <div class="time-year">2001</div>
+          <div class="time-title">Exploring the unknown</div>
+          <div class="time-copy">Early Internet culture, CLB Mật Mã, HVA — a period of exploration around networks, systems and information security.</div>
+        </div>
+
+        <div class="time-item">
+          <div class="time-year">LATER</div>
+          <div class="time-title">Systems</div>
+          <div class="time-copy">From network research to real-world systems, including core banking projects and infrastructure.</div>
+        </div>
+
+        <div class="time-item">
+          <div class="time-year">VIET CAPITAL</div>
+          <div class="time-title">Building from the ground up</div>
+          <div class="time-copy">Participating in building systems from the early days of Viet Capital.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="transition">
+      <p class="fade-up">Perhaps that is why<br>I listen to sound differently.</p>
+    </section>
+
+    <section class="ear" id="ear">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 02</div>
+        <h2 class="section-title">The<br>Ear</h2>
+        <div class="section-kicker">An engineer's mind. A listener's ear.</div>
+      </div>
+
+      <div class="ear-header-grid fade-up">
+        <div class="ear-intro">
+          <p>I don't only hear the object. I listen to the system around it.</p>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-top:1rem">
+            Đôi tai là tiêu chuẩn đo lường tối thượng. Trước khi âm thanh trở thành cảm xúc, nó là mức tham chiếu, động lực học và độ tĩnh của không gian.
+          </p>
+        </div>
+
+        <div class="ear-vu-card brushed-metal">
+          <div class="vu-header">
+            <span>REFERENCE LEVEL</span>
+            <span style="color:var(--accent)">CLASS-A</span>
+          </div>
+          
+          <div class="vu-meter-box">
+            <span class="vu-meter-scale">-20 &middot; -10 &middot; -5 &middot; 0 &middot; +3 dB</span>
+            <div id="hero-vu-needle" class="vu-needle"></div>
+          </div>
+
+          <div class="vu-footer">
+            <span>VU METER &middot; -3dB ANALOG</span>
+            <span style="color:var(--accent-light)">VU HOANG &middot; HANOI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sensations fade-up">
+        <div class="sense"><strong>Clarity</strong><span>WHAT IS REVEALED</span></div>
+        <div class="sense"><strong>Dynamics</strong><span>HOW IT BREATHES</span></div>
+        <div class="sense"><strong>Texture</strong><span>WHAT IT FEELS LIKE</span></div>
+        <div class="sense"><strong>Space</strong><span>WHERE IT LIVES</span></div>
+        <div class="sense active"><strong>Decay</strong><span>WHAT REMAINS</span></div>
+        <div class="sense"><strong>Silence</strong><span>WHAT IS NOT PLAYED</span></div>
+      </div>
+    </section>
+
+    <section class="decay" id="decay">
+      <div class="decay-wrap">
+        <div class="eyebrow fade-up">SIGNAL / 03 &middot; LISTENING NOTE 001</div>
+        <h2 class="section-title fade-up" style="margin-top:16px">Decay</h2>
+        
+        <div class="canvas-container fade-up">
+          <canvas id="waveform-canvas" title="Click to trigger note decay curve"></canvas>
+          <div class="canvas-meta">
+            <span>DECAY ENVELOPE VISUALIZER</span>
+            <span id="canvas-status" style="color:var(--accent)">CLICK CANVAS TO TRIGGER GUITAR DECAY</span>
+            <span>220Hz (A3) EXPONENTIAL</span>
+          </div>
+        </div>
+
+        <div class="quote fade-up">The note ends.<br>But something remains.</div>
+        <div class="small-copy fade-up">
+          <p>After listening to many guitar players, I once noticed something unusually moving in the playing of Phil McGarrick: the emotional continuity of one note into the next.</p>
+          <p>It wasn't simply tone. It was the life inside the decay — the feeling that the previous note had not disappeared before the next one arrived.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="listening" id="listening">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 04</div>
+        <h2 class="section-title">My<br>Listening</h2>
+        <div class="section-kicker">Not the best equipment. The right relationship.</div>
+      </div>
+
+      <div class="principle fade-up">
+        <h3>I don't believe there is one perfect speaker, one perfect amplifier, or one correct way to listen.</h3>
+        <div>
+          <p>Different rooms. Different systems. Different music. Different ears.</p>
+          <p>What matters to me is the relationship between them — and whether the music makes me want to stay for one more track.</p>
+          <p class="personal-note">I am drawn to reference-grade systems: carefully matched vintage Hi-End components, refined Class-A amplification, revealing loudspeakers and a room that allows the recording to breathe. The point is not the badge on the front panel, but the quality of the relationship between source, system, room and listener.</p>
+          <div class="system-words">
+            <span>KOUKYUU AUDIO</span><span>VINTAGE HI-END</span><span>CLASS-A</span><span>REFERENCE-GRADE</span><span>CAREFULLY MATCHED</span><span>LISTENING ROOM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ritual" id="ritual">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 05</div>
+        <h2 class="section-title">The<br>Ritual</h2>
+        <div class="section-kicker">Sometimes listening requires doing nothing else.</div>
+      </div>
+
+      <div class="amp-control-panel brushed-metal fade-up">
+        <div class="amp-panel-header">
+          <div>
+            <strong style="color:var(--text);letter-spacing:.15em">THE LISTENING RITUAL SYSTEM</strong>
+            <span style="color:var(--subtle);margin-left:8px">Class-A / Integrated</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span id="ritual-led" style="width:8px;height:8px;border-radius:50%;background:#400;transition:all .3s"></span>
+            <span id="ritual-status" style="color:var(--subtle);letter-spacing:.15em">STANDBY</span>
+          </div>
+        </div>
+
+        <div class="amp-grid-status">
+          <div class="amp-status-chip active">
+            <span>SOURCE</span>
+            <strong>LOSSLESS</strong>
+          </div>
+          <div class="amp-status-chip">
+            <span>MEDIA</span>
+            <strong>CD-R</strong>
+          </div>
+          <div class="amp-status-chip">
+            <span>SOURCE / TRANSPORT</span>
+            <strong>REFERENCE-GRADE</strong>
+          </div>
+          <div class="amp-status-chip">
+            <span>AMPLIFICATION</span>
+            <strong>HIGH-END CLASS-A</strong>
+          </div>
+          <div class="amp-status-chip active">
+            <span>LOUDSPEAKERS</span>
+            <strong>REFERENCE-GRADE</strong>
+          </div>
+        </div>
+
+        <div class="amp-controls-row">
+          <div class="switch-box">
+            <span style="font:9px var(--mono);color:var(--muted);letter-spacing:.15em">POWER TOGGLE</span>
+            <button id="power-switch-btn" class="power-lever-btn" title="Toggle Amplifier Relay">
+              <span style="font:7px var(--mono);color:var(--subtle)">ON</span>
+              <div id="lever-knob" class="lever-knob"></div>
+              <span style="font:7px var(--mono);color:var(--subtle)">OFF</span>
+            </button>
+            <span style="font:9px var(--mono);color:var(--accent)">TOGGLE RELAY</span>
+          </div>
+
+          <div class="cd-tray-box">
+            <div style="display:flex;justify-content:space-between;font:9px var(--mono);color:var(--muted)">
+              <span>DISC TRANSPORT / CD TRAY</span>
+              <span id="tray-status" style="color:var(--subtle)">CLOSED</span>
+            </div>
+
+            <div class="cd-slot">
+              <div id="spinning-cd" class="cd-spinning-disc">
+                <div class="disc-graphic"></div>
+                <span style="font:11px var(--mono);color:var(--accent-light)">Phil McGarrick &mdash; Guitar Notes</span>
+              </div>
+              <button id="eject-btn" class="eject-btn">OPEN / EJECT TRAY</button>
+            </div>
+            <span style="font:9px var(--mono);color:var(--subtle)">Press to insert CD-R & listen to the note decay</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory" id="memory">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 06</div>
+        <h2 class="section-title">Sounds I<br>Remember</h2>
+        <div class="section-kicker">Long before I knew how to describe sound, I was already listening.</div>
+      </div>
+      <div class="memory-grid fade-up">
+        <article class="memory-card">
+          <div class="meta">OBJECT / MEMORY</div>
+          <h3>A radio & 1994.</h3>
+          <p>The sounds of a home and the first encounters with Japanese vintage Hi-End before I knew there were words for timbre, dynamics or decay.</p>
+        </article>
+        <article class="memory-card">
+          <div class="meta">FORMAT / MEMORY</div>
+          <h3>A cassette.</h3>
+          <p>Music passed from one hand to another, carrying not only songs but the memory of where they came from.</p>
+        </article>
+        <article class="memory-card">
+          <div class="meta">MUSIC / MEMORY</div>
+          <h3>Paul Mauriat & Vivaldi.</h3>
+          <p>Some melodies survive decades without needing to explain why.</p>
+        </article>
+        <article class="memory-card">
+          <div class="meta">RITUAL / MEMORY</div>
+          <h3>A CD tray closing.</h3>
+          <p>One small mechanical sound before the room becomes quiet enough to listen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="hanoi" id="hanoi">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 07</div>
+        <h2 class="section-title">Inner<br>Hanoi</h2>
+        <div class="section-kicker">People, rooms and the culture of listening.</div>
+      </div>
+      <div class="hanoi-copy fade-up">
+        <p>Hanoi has its own way of listening.</p>
+        <p>Quiet rooms behind old streets. Morning coffee. Tea and conversations that last longer than expected. Music playing while the city continues outside.</p>
+        <p>I am interested in the people, places and memories that exist inside that soundscape.</p>
+      </div>
+    </section>
+
+    <section class="notes" id="notes">
+      <div class="section-head fade-up">
+        <div class="section-number">SIGNAL / 08</div>
+        <h2 class="section-title">Notes</h2>
+        <div class="section-kicker">Things worth remembering.</div>
+      </div>
+      <div class="notes-grid fade-up">
+        <a class="note" href="#">
+          <div class="meta">THE EAR / DECAY</div>
+          <h3>The Note That Remains</h3>
+          <p>On guitar, sustain, decay and emotional continuity.</p>
+        </a>
+        <a class="note" href="#">
+          <div class="meta">INNER HANOI / MEMORY</div>
+          <h3>A Room in Hanoi</h3>
+          <p>A small room, a system, and a conversation that lasted into the evening.</p>
+        </a>
+        <a class="note" href="#">
+          <div class="meta">MEMORY / MUSIC</div>
+          <h3>The Sound I Grew Up With</h3>
+          <p>The first sounds that became part of an internal reference.</p>
+        </a>
+        <a class="note" href="#">
+          <div class="meta">LISTENING / REFLECTION</div>
+          <h3>Why I Still Listen</h3>
+          <p>Technology changes. Music changes. The need to listen remains.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <div class="eyebrow">THE LISTENING LIFE</div>
+      <div class="footer-title">Vũ<br>Hoàng</div>
+    </div>
+    <div class="footer-line">
+      <span>Engineer &middot; Listener &middot; Music Curator</span>
+      <span>Hanoi &middot; Vietnam</span>
+      <span><a href="mailto:contact@vuhoang.io.vn">Contact &rarr;</a></span>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #09090b;
+    --panel: #111214;
+    --surfaceBorder: #1f2226;
+    --text: #ecece8;
+    --muted: #8b8e94;
+    --subtle: #4b4f56;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-amber: rgba(212, 163, 115, 0.25);
+    --soft: rgba(255, 255, 255, 0.04);
+    --accent: #d4a373;
+    --accent-light: #f3d9b1;
+    --accent-glow: rgba(212, 163, 115, 0.08);
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Inter', Helvetica, Arial, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Ambient Warm Glow */
+  .amp-glow-top {
+    position: fixed;
+    top: -12%;
+    right: -8%;
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, rgba(9, 9, 11, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .amp-glow-bottom {
+    position: fixed;
+    bottom: -15%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.04) 0%, rgba(9, 9, 11, 0) 75%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.75'/%3E%3C/svg%3E");
+  }
+  .cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* Brushed Metal Texture */
+  .brushed-metal {
+    background-color: #121416;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.4) 100%),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0px, rgba(255, 255, 255, 0.01) 1px, transparent 1px, transparent 2px);
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    backdrop-filter: blur(12px);
+    background: rgba(9, 9, 11, 0.85);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-brand {
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-family: var(--mono);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-brand-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+  }
+  .nav-links a {
+    color: var(--muted);
+    transition: color 0.25s;
+  }
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+  .nav-audio-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #141618;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font: 9px var(--mono);
+    letter-spacing: 0.12em;
+    transition: all 0.3s;
+  }
+  .nav-audio-btn:hover {
+    border-color: var(--line-amber);
+    color: var(--accent);
+  }
+  .audio-led {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--subtle);
+    transition: all 0.3s;
+  }
+  .audio-led.active {
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    padding: 120px 7vw 80px;
+    position: relative;
+    overflow: hidden;
+    gap: 5vw;
+    background:
+      radial-gradient(circle at 75% 35%, rgba(212, 163, 115, 0.07), transparent 35%),
+      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02), transparent 30%),
+      var(--bg);
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .eyebrow, .meta {
+    font: 10px/1.4 var(--mono);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    margin: 4px 0;
+    font-size: clamp(46px, 7.5vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    font-family: var(--mono);
+  }
+  .hero-title {
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.25;
+    max-width: 560px;
+    color: #d8d6d1;
+  }
+  .hero-title em {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    color: var(--muted);
+    max-width: 480px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .enter {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--line-amber);
+    padding: 13px 24px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    color: var(--accent);
+    transition: all 0.3s ease;
+    background: rgba(212, 163, 115, 0.03);
+    border-radius: 2px;
+  }
+  .enter:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(212, 163, 115, 0.3);
+  }
+
+  /* Hero Right Standalone Portrait */
+  .portrait-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    background: #121315;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    transition: border-color 0.5s;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+  }
+  .portrait-card:hover {
+    border-color: var(--line-amber);
+  }
+  .portrait-img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(1) contrast(1.2) brightness(0.92);
+    transition: all 0.7s ease;
+    mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  }
+  .portrait-card:hover .portrait-img {
+    filter: grayscale(1) contrast(1.2) brightness(1);
+    transform: scale(1.02);
+  }
+  .portrait-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(9, 9, 11, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font: 9px var(--mono);
+    color: var(--subtle);
+    pointer-events: none;
+  }
+
+  .hero-bottom {
+    position: absolute;
+    bottom: 24px;
+    left: 7vw;
+    right: 7vw;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font: 9px var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  section {
+    position: relative;
+    padding: 12vw 8vw;
+    border-top: 1px solid var(--line);
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 70px;
+  }
+  .section-number {
+    font: 11px var(--mono);
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+  .section-title {
+    font-size: clamp(38px, 6vw, 84px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    margin: 0;
+    font-family: var(--serif);
+  }
+  .section-kicker {
+    max-width: 320px;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* 01. The System */
+  .system {
+    background: #0d0e10;
+  }
+  .system-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8vw;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .lead {
+    font-family: var(--serif);
+    font-size: clamp(24px, 2.8vw, 40px);
+    line-height: 1.2;
+    max-width: 650px;
+    font-style: italic;
+  }
+  .body {
+    max-width: 580px;
+    color: #9b9ea4;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .timeline {
+    margin-top: 80px;
+    border-top: 1px solid var(--line);
+  }
+  .time-item {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    gap: 30px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .time-year {
+    font: 11px var(--mono);
+    color: var(--accent);
+  }
+  .time-title {
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .time-copy {
+    color: #8b8e94;
+    font-size: 13px;
+    max-width: 460px;
+    font-weight: 300;
+  }
+
+  .transition {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 163, 115, 0.05), transparent 45%), var(--bg);
+  }
+  .transition p {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4.5vw, 64px);
+    line-height: 1.15;
+    max-width: 950px;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* 02. The Ear & Integrated VU Meter */
+  .ear {
+    background: #0b0c0e;
+  }
+  .ear-header-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 6vw;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .ear-intro p {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.5vw, 46px);
+    line-height: 1.18;
+  }
+
+  .ear-vu-card {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .vu-header {
+    display: flex;
+    justify-content: space-between;
+    font: 9px var(--mono);
+    color: var(--muted);
+    letter-spacing: 0.15em;
+  }
+  .vu-meter-box {
+    width: 100%;
+    height: 95px;
+    border-top: 2px solid rgba(212, 163, 115, 0.4);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-radius: 95px 95px 0 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 100%, rgba(212, 163, 115, 0.12) 0%, rgba(9, 9, 11, 0.6) 75%);
+  }
+  .vu-needle {
+    width: 1.5px;
+    height: 80px;
+    background: var(--accent);
+    transform-origin: bottom center;
+    transform: rotate(-25deg);
+    transition: transform 0.15s cubic-bezier(0.1, 0.9, 0.2, 1);
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .vu-meter-scale {
+    position: absolute;
+    top: 12px;
+    font: 8px var(--mono);
+    color: rgba(212, 163, 115, 0.6);
+    letter-spacing: 0.1em;
+  }
+  .vu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 9px var(--mono);
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+  }
+
+  .sensations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .sense {
+    padding: 36px 24px;
+    border-right: 1px solid var(--line);
+    min-height: 170px;
+    transition: background 0.3s;
+  }
+  .sense:hover {
+    background: rgba(212, 163, 115, 0.03);
+  }
+  .sense:nth-child(3n) {
+    border-right: 0;
+  }
+  .sense strong {
+    display: block;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-family: var(--mono);
+  }
+  .sense span {
+    display: block;
+    margin-top: 16px;
+    color: var(--muted);
+    font: 9px var(--mono);
+    letter-spacing: 0.18em;
+  }
+  .sense.active strong {
+    color: var(--accent);
+  }
+
+  /* 03. Decay Section & Canvas */
+  .decay {
+    background: #0e0f12;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  .decay-wrap {
+    max-width: 1050px;
+    margin: auto;
+    width: 100%;
+  }
+  .quote {
+    font-family: var(--serif);
+    font-size: clamp(34px, 5vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    font-style: italic;
+  }
+  .small-copy {
+    max-width: 570px;
+    color: #9b9ea4;
+    font-size: 15px;
+    margin-top: 35px;
+    font-weight: 300;
+  }
+
+  .canvas-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #111315;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    margin: 40px 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  #waveform-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .canvas-meta {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    font: 9px var(--mono);
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  /* 04. My Listening */
+  .listening {
+    background: #111215;
+  }
+  .principle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8vw;
+    align-items: start;
+  }
+  .principle h3 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.2vw, 46px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .principle p {
+    color: #9b9ea4;
+    max-width: 540px;
+    font-weight: 300;
+  }
+  .system-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 40px;
+  }
+  .system-words span {
+    border: 1px solid var(--line-amber);
+    padding: 8px 12px;
+    font: 9px var(--mono);
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    background: rgba(212, 163, 115, 0.02);
+  }
+  .personal-note {
+    padding-left: 18px;
+    border-left: 1px solid var(--line-amber);
+    color: #b9babd !important;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* 05. The Ritual (Amplifier Panel) */
+  .ritual {
+    background: #090a0c;
+  }
+  .amp-control-panel {
+    max-width: 950px;
+    margin: 50px auto 0;
+    border-radius: 8px;
+    border: 1px solid var(--surfaceBorder);
+    padding: 32px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    position: relative;
+  }
+  .amp-panel-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+    font: 10px var(--mono);
+  }
+  .amp-grid-status {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 24px 0;
+    font: 10px var(--mono);
+    text-align: center;
+  }
+  .amp-status-chip {
+    background: rgba(9, 9, 11, 0.8);
+    border: 1px solid var(--line);
+    padding: 10px 6px;
+    border-radius: 4px;
+  }
+  .amp-status-chip span {
+    display: block;
+    font-size: 8px;
+    color: var(--subtle);
+    margin-bottom: 4px;
+  }
+  .amp-status-chip strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .amp-status-chip.active strong {
+    color: var(--accent);
+  }
+
+  .amp-controls-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .switch-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 22, 24, 0.6);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+  }
+  .power-lever-btn {
+    width: 44px;
+    height: 76px;
+    background: #090a0b;
+    border-radius: 4px;
+    border: 1px solid var(--surfaceBorder);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
+  }
+  .lever-knob {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #888, #333);
+    border: 1px solid #aaa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transform: translateY(16px);
+    transition: transform 0.2s;
+  }
+  .lever-knob.on {
+    transform: translateY(-16px);
+  }
+
+  .cd-tray-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(20, 22, 24, 0.6);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+  }
+  .cd-slot {
+    width: 100%;
+    height: 46px;
+    background: #090a0b;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cd-spinning-disc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(-120%);
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cd-spinning-disc.loaded {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .disc-graphic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: linear-gradient(45deg, rgba(212, 163, 115, 0.4), #555);
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .eject-btn {
+    padding: 8px 14px;
+    background: #181a1d;
+    border: 1px solid var(--line);
+    color: var(--text);
+    font: 9px var(--mono);
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .eject-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* 06. Memory */
+  .memory {
+    background: #090a0c;
+  }
+  .memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+  }
+  .memory-card {
+    background: #0d0e11;
+    padding: 50px 36px;
+    min-height: 250px;
+    transition: background 0.3s;
+  }
+  .memory-card:hover {
+    background: #15171b;
+  }
+  .memory-card h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    margin: 12px 0;
+    font-style: italic;
+  }
+  .memory-card p {
+    font-size: 13px;
+    color: #8e9297;
+    max-width: 430px;
+    font-weight: 300;
+  }
+
+  /* 07. Inner Hanoi */
+  .hanoi {
+    background: #0f1012;
+    overflow: hidden;
+  }
+  .hanoi:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background: radial-gradient(circle at 20% 20%, #fff, transparent 1px), radial-gradient(circle at 70% 70%, #fff, transparent 1px);
+    background-size: 80px 80px, 120px 120px;
+  }
+  .hanoi-copy {
+    position: relative;
+    max-width: 900px;
+  }
+  .hanoi-copy p {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3.5vw, 50px);
+    line-height: 1.15;
+  }
+
+  /* 08. Notes */
+  .notes {
+    background: #0d0e11;
+  }
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+  }
+  .note {
+    background: #0d0e11;
+    padding: 28px;
+    min-height: 230px;
+    transition: all 0.3s;
+  }
+  .note:hover {
+    background: #15171c;
+    transform: translateY(-3px);
+  }
+  .note .meta {
+    margin-bottom: 36px;
+  }
+  .note h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0 0 10px;
+    font-style: italic;
+  }
+  .note p {
+    font-size: 12px;
+    color: #8e9297;
+    font-weight: 300;
+  }
+
+  /* Footer */
+  footer {
+    min-height: 55vh;
+    padding: 10vw 8vw 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #070708;
+    border-top: 1px solid var(--line);
+  }
+  .footer-title {
+    font-size: clamp(54px, 9vw, 140px);
+    line-height: 0.82;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+    font-family: var(--mono);
+  }
+  .footer-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    color: var(--muted);
+    font: 9px var(--mono);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 110px 7vw 80px;
+      gap: 40px;
+    }
+    .portrait-card {
+      margin: 0 auto;
+    }
+    .ear-header-grid, .system-grid, .principle, .amp-controls-row {
+      grid-template-columns: 1fr;
+    }
+    .amp-grid-status {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .time-item {
+      grid-template-columns: 90px 1fr;
+    }
+    .time-copy {
+      grid-column: 2;
+    }
+    .sensations {
+      grid-template-columns: 1fr 1fr;
+    }
+    .sense:nth-child(3n) {
+      border-right: 1px solid var(--line);
+    }
+    .sense:nth-child(2n) {
+      border-right: 0;
+    }
+    .memory-grid, .notes-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .nav {
+      padding: 16px 20px;
+    }
+    section {
+      padding: 20vw 7vw;
+    }
+    .section-head {
+      display: block;
+      margin-bottom: 45px;
+    }
+    .section-kicker {
+      margin-top: 20px;
+    }
+    .sensations, .memory-grid, .notes-grid {
+      grid-template-columns: 1fr;
+    }
+    .sense, .sense:nth-child(3n), .sense:nth-child(2n) {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .footer-line {
+      display: block;
+      line-height: 2.2;
+    }
+  }
+</style>
+
+<script>
+  // 1. Web Audio Synthesizer Engine
+  let audioCtx: AudioContext | null = null;
+  let soundEnabled = false;
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      audioCtx = new AudioClass();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+
+  function playRelayClick() {
+    if (!soundEnabled || !audioCtx) return;
+    initAudio();
+    const now = audioCtx.currentTime;
+
+    // High noise snap
+    const bufferSize = audioCtx.sampleRate * 0.02;
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'highpass';
+    filter.frequency.setValueAtTime(2400, now);
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.018);
+
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+    noise.start(now);
+
+    // Low contact pulse
+    const osc = audioCtx.createOscillator();
+    const oscGain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(120, now);
+    osc.frequency.exponentialRampToValueAtTime(30, now + 0.035);
+    oscGain.gain.setValueAtTime(0.35, now);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+
+    osc.connect(oscGain);
+    oscGain.connect(audioCtx.destination);
+    osc.start(now);
+  }
+
+  function playGuitarNote() {
+    if (!soundEnabled || !audioCtx) return;
+    initAudio();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    const filter = audioCtx.createBiquadFilter();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(220, now); // A3
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1400, now);
+    filter.frequency.exponentialRampToValueAtTime(220, now + 2.5);
+
+    gain.gain.setValueAtTime(0.3, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.8);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(now);
+    osc.stop(now + 3.0);
+  }
+
+  // Audio Nav Toggle
+  const navAudioToggle = document.getElementById('nav-audio-toggle');
+  const audioLed = document.getElementById('audio-led');
+  const audioLabel = document.getElementById('audio-label');
+
+  navAudioToggle?.addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    if (soundEnabled) {
+      initAudio();
+      audioLed?.classList.add('active');
+      if (audioLabel) audioLabel.textContent = 'SOUND: ACTIVE';
+      playRelayClick();
+    } else {
+      audioLed?.classList.remove('active');
+      if (audioLabel) audioLabel.textContent = 'SOUND: OFF';
+    }
+  });
+
+  // 2. Cursor Tracking & Fade-up Observer
+  const cursor = document.getElementById('cursor');
+  window.addEventListener('mousemove', (e) => {
+    if (cursor) {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    }
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+  // 3. Interactive Waveform Canvas & Analog VU Needle
+  const canvas = document.getElementById('waveform-canvas') as HTMLCanvasElement | null;
+  const canvasStatus = document.getElementById('canvas-status');
+  const vuNeedle = document.getElementById('hero-vu-needle');
+  let ctx: CanvasRenderingContext2D | null = null;
+  let phase = 0;
+  let decayTimer = 0;
+  let isDecaying = false;
+
+  function resizeCanvas() {
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+    ctx = canvas.getContext('2d');
+    if (ctx) ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  function renderAudioGraph() {
+    if (!canvas || !ctx) return;
+    const w = canvas.width / window.devicePixelRatio;
+    const h = canvas.height / window.devicePixelRatio;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Center baseline
+    ctx.beginPath();
+    ctx.strokeStyle = '#1c1f22';
+    ctx.moveTo(0, h / 2);
+    ctx.lineTo(w, h / 2);
+    ctx.stroke();
+
+    let ampEnvelope = Math.exp(-decayTimer * 1.4);
+    if (!isDecaying) {
+      ampEnvelope = 0.2 + Math.sin(phase * 0.6) * 0.05;
+    } else {
+      decayTimer += 0.016;
+      if (decayTimer > 3.0) {
+        isDecaying = false;
+        decayTimer = 0;
+        if (canvasStatus) canvasStatus.textContent = 'CLICK CANVAS TO TRIGGER GUITAR DECAY';
+      }
+    }
+
+    ctx.beginPath();
+    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = isDecaying ? '#d4a373' : '#8b8e94';
+
+    for (let x = 0; x < w; x++) {
+      const normX = x / w;
+      const wave1 = Math.sin(normX * 28 + phase);
+      const wave2 = Math.sin(normX * 56 + phase * 1.5) * 0.25;
+      const y = h / 2 + (wave1 + wave2) * (h / 3.2) * ampEnvelope;
+      if (x === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Realtime VU Needle Wobble
+    if (vuNeedle) {
+      const angle = -25 + ampEnvelope * 45 + Math.sin(phase) * 2.5;
+      vuNeedle.style.transform = `rotate(${angle}deg)`;
+    }
+
+    phase += 0.07;
+    requestAnimationFrame(renderAudioGraph);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  renderAudioGraph();
+
+  canvas?.addEventListener('click', () => {
+    isDecaying = true;
+    decayTimer = 0;
+    if (canvasStatus) canvasStatus.textContent = 'SUSTAIN & DECAY ACTIVE (PHIL McGARRICK)';
+    playGuitarNote();
+  });
+
+  // 4. Ritual Controls (Power Switch & CD Tray)
+  const powerBtn = document.getElementById('power-switch-btn');
+  const leverKnob = document.getElementById('lever-knob');
+  const ritualLed = document.getElementById('ritual-led');
+  const ritualStatus = document.getElementById('ritual-status');
+
+  const ejectBtn = document.getElementById('eject-btn');
+  const spinningCd = document.getElementById('spinning-cd');
+  const trayStatus = document.getElementById('tray-status');
+
+  let isAmpOn = false;
+  let isCdLoaded = false;
+
+  powerBtn?.addEventListener('click', () => {
+    isAmpOn = !isAmpOn;
+    playRelayClick();
+
+    if (isAmpOn) {
+      leverKnob?.classList.add('on');
+      if (ritualLed) {
+        ritualLed.style.background = '#d4a373';
+        ritualLed.style.boxShadow = '0 0 10px #d4a373';
+      }
+      if (ritualStatus) {
+        ritualStatus.textContent = 'CLASS-A ACTIVE';
+        ritualStatus.style.color = '#d4a373';
+      }
+    } else {
+      leverKnob?.classList.remove('on');
+      if (ritualLed) {
+        ritualLed.style.background = '#400';
+        ritualLed.style.boxShadow = 'none';
+      }
+      if (ritualStatus) {
+        ritualStatus.textContent = 'STANDBY';
+        ritualStatus.style.color = 'var(--subtle)';
+      }
+    }
+  });
+
+  ejectBtn?.addEventListener('click', () => {
+    isCdLoaded = !isCdLoaded;
+    playRelayClick();
+
+    if (isCdLoaded) {
+      spinningCd?.classList.add('loaded');
+      if (trayStatus) {
+        trayStatus.textContent = 'TRAY OPEN / CD LOADED';
+        trayStatus.style.color = '#d4a373';
+      }
+      playGuitarNote();
+    } else {
+      spinningCd?.classList.remove('loaded');
+      if (trayStatus) {
+        trayStatus.textContent = 'CLOSED';
+        trayStatus.style.color = 'var(--subtle)';
+      }
+    }
+  });
+
+  // Enter Room Button Flash
+  const enterBtn = document.getElementById('enter-btn');
+  enterBtn?.addEventListener('click', () => {
+    playRelayClick();
+    document.body.style.opacity = '0.92';
+    setTimeout(() => {
+      document.body.style.opacity = '1';
+    }, 120);
+  });
+</script>
